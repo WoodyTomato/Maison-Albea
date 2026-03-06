@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "homepage": "https://WoodyTomato.github.io/Maison-Albea/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -18,9 +19,9 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.4.0",
     "autoprefixer": "^10.4.20",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "vite": "^5.4.11"
   }
 }
-
