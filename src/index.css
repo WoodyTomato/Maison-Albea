@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #1e1a16;
+  background-color: #f7f4ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(226, 214, 198, 0.34), transparent 32%),
+    radial-gradient(circle at 86% 0%, rgba(214, 227, 216, 0.5), transparent 29%),
+    linear-gradient(180deg, #f8f5ef 0%, #f4efe5 100%);
+}
+
+.section-shell {
+  @apply mx-auto w-[min(1150px,92%)] py-20 md:py-28;
+}
+
+.section-shell-tight {
+  @apply mx-auto w-[min(1150px,92%)] py-14 md:py-20;
+}
+
+.title-serif {
+  @apply font-serif text-4xl leading-tight md:text-5xl lg:text-6xl;
+}
+
+.kicker {
+  @apply mb-5 inline-flex items-center rounded-full border border-sand/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-warmGray;
+}
+
+.card-premium {
+  @apply relative overflow-hidden rounded-2xl border border-sand/80 bg-[#f8f4ec]/80 p-7 shadow-soft backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(30,26,22,0.12)];
+}
+
+.card-premium::before {
+  content: "";
+  @apply pointer-events-none absolute left-6 top-0 h-9 w-24 bg-gradient-to-b from-white/45 to-transparent;
+}
+
+.section-divider {
+  @apply mx-auto h-px w-[min(1150px,92%)] bg-gradient-to-r from-transparent via-sand/90 to-transparent;
+}
+
+.metric-chip {
+  @apply rounded-full border border-sand/85 bg-alabaster/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-warmGray;
+}
+
+.input-premium {
+  @apply rounded-xl border border-sand bg-white/70 px-4 py-3 text-ink outline-none transition focus:border-sageDeep focus:bg-white;
+}
+
+.link-underline {
+  @apply relative inline-block;
+}
+
+.link-underline::after {
+  content: "";
+  @apply absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-ink transition-transform duration-300;
+}
+
+.link-underline:hover::after {
+  @apply origin-left scale-x-100;
+}
+
