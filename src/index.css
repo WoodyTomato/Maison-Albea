@@ -20,6 +20,19 @@ body {
     linear-gradient(180deg, #f8f5ef 0%, #f4efe5 100%);
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: radial-gradient(circle at center, black, transparent 78%);
+  opacity: 0.22;
+}
+
 .section-shell {
   @apply mx-auto w-[min(1150px,92%)] py-20 md:py-28;
 }
@@ -68,5 +81,14 @@ body {
 
 .link-underline:hover::after {
   @apply origin-left scale-x-100;
+}
+
+.scroll-stage {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-panel {
+  @apply relative overflow-hidden rounded-[2rem] border border-sand/70 bg-white/45 shadow-soft backdrop-blur-sm;
 }
 

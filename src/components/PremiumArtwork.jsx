@@ -1,4 +1,29 @@
-function PremiumArtwork({ variant = "hero", className = "" }) {
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+function PremiumArtwork({ variant = "hero", className = "", disableScrollMotion = false }) {
+  const artworkRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: artworkRef,
+    offset: ["start end", "end start"],
+  });
+
+  const scaleTarget = variant === "products" ? 1.04 : 1.06;
+  const yTarget = variant === "products" ? -14 : -18;
+  const scaleRaw = useTransform(scrollYProgress, [0, 1], [1, scaleTarget]);
+  const yRaw = useTransform(scrollYProgress, [0, 1], [18, yTarget]);
+  const scale = useSpring(scaleRaw, {
+    stiffness: 130,
+    damping: 26,
+    mass: 0.45,
+  });
+  const y = useSpring(yRaw, {
+    stiffness: 130,
+    damping: 26,
+    mass: 0.45,
+  });
+
   const variants = {
     hero: {
       shell: "from-[#f7f1e8] via-[#efe8dc] to-[#e6ebdf]",
@@ -23,7 +48,9 @@ function PremiumArtwork({ variant = "hero", className = "" }) {
   const active = variants[variant] ?? variants.hero;
 
   return (
-    <div
+    <motion.div
+      ref={artworkRef}
+      style={shouldReduceMotion || disableScrollMotion ? undefined : { scale, y }}
       className={`relative overflow-hidden rounded-[2rem] border border-sand/70 bg-gradient-to-br ${active.shell} shadow-soft ${className}`}
     >
       <div className="absolute -left-16 top-0 h-48 w-48 rounded-full bg-white/30 blur-2xl" />
@@ -62,7 +89,7 @@ function PremiumArtwork({ variant = "hero", className = "" }) {
           opacity="0.7"
         />
       </svg>
-    </div>
+    </motion.div>
   );
 }
 

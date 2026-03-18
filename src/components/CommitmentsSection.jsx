@@ -1,17 +1,17 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 
 const commitments = [
   {
-    title: "Formules biodégradables",
-    text: "Tensioactifs sélectionnés pour leur efficacité et leur profil environnemental contrôlé.",
+    title: "Formules biodegradables",
+    text: "Tensioactifs selectionnes pour leur efficacite et leur profil environnemental controle.",
   },
   {
-    title: "Traçabilité des matières",
-    text: "Chaîne d'approvisionnement documentée et partenaires européens privilégiés.",
+    title: "Tracabilite des matieres",
+    text: "Chaine d'approvisionnement documentee et partenaires europeens privilegies.",
   },
   {
-    title: "Éco-conception",
-    text: "Formats concentrés, recharges et réduction des volumes transportés.",
+    title: "Eco-conception",
+    text: "Formats concentres, recharges et reduction des volumes transportes.",
   },
 ];
 
@@ -26,7 +26,7 @@ function CommitmentsSection() {
       >
         <p className="kicker">Engagements</p>
         <h2 className="font-serif text-4xl md:text-5xl">
-          L'exigence environnementale, sans compromis sur le résultat
+          L'exigence environnementale, sans compromis sur le resultat
         </h2>
       </motion.div>
 

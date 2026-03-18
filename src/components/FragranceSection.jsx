@@ -1,14 +1,14 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import PremiumArtwork from "./PremiumArtwork";
 
 const notes = [
   {
     title: "Citron de Menton",
-    text: "Une fraîcheur lumineuse et nette, évocatrice de linge parfaitement préparé.",
+    text: "Une fraicheur lumineuse et nette, evocatrice de linge parfaitement prepare.",
   },
   {
-    title: "Thé vert",
-    text: "Un cœur végétal apaisant qui apporte une sensation de pureté sophistiquée.",
+    title: "The vert",
+    text: "Un coeur vegetal apaisant qui apporte une sensation de proprete sophistiquee.",
   },
   {
     title: "Musc blanc",
@@ -36,10 +36,10 @@ function FragranceSection() {
           transition={{ duration: 0.7 }}
         >
           <p className="kicker">Signature olfactive</p>
-          <h2 className="font-serif text-4xl md:text-5xl">Citron de Menton, thé vert, musc blanc</h2>
+          <h2 className="font-serif text-4xl md:text-5xl">Citron de Menton, the vert, musc blanc</h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-warmGray">
-            Une trilogie sensorielle pensée pour accompagner discrètement les rituels de
-            propreté et renforcer la perception d'un luxe serein.
+            Une trilogie sensorielle pensee pour accompagner discretement les rituels de
+            proprete et renforcer la perception d'un luxe serein.
           </p>
         </motion.div>
       </div>
